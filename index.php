@@ -114,7 +114,7 @@ wp_head(); ?>
                 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                     <h1 class="entry-title"><?php the_title(); ?></h1>
                     <?php the_content(); ?>
-                    <?php comments_template( '', true ); ?>
+                    <?php if ( get_option('zm_ajax_comments_version') ) zm_ajax_comments(); ?>
                 </div>
                 <?php endwhile; // end of the loop. ?>
             </article>
@@ -146,7 +146,7 @@ wp_head(); ?>
         <?php endif; ?>
         <h3 class="title">Tags</h3>
         <ul>
-            <?php $queried_term = get_query_var('tag'); foreach( get_tags() as $tag) : ?>                
+            <?php $queried_term = get_query_var('tag'); foreach( get_tags() as $tag) : ?>
                 <li class="<?php if ( $queried_term == $tag->slug ) : ?>current<?php endif; ?>">
                 <a href="<?php print get_tag_link( $tag->term_id ); ?>" title="<?php print $tag->name; ?>" class="<?php print $tag->slug; ?>">
                 <?php print $tag->name; ?></a>
@@ -191,3 +191,4 @@ wp_footer(); ?>
 
 </body>
 </html>
+
