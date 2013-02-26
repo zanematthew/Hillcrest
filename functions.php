@@ -6,7 +6,7 @@ register_nav_menus( array(
     ) );
 
 function zm_widgets_init() {
-        
+
 	// Area 1, located at the top of the sidebar.
 	register_sidebar( array(
 		'name' => __( 'First header widget area', 'zm' ),
@@ -17,7 +17,7 @@ function zm_widgets_init() {
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
-	
+
     register_sidebar( array(
         'name' => __( 'First Sidebar Widget Area', 'zm' ),
         'id' => 'first-sidebar-widget-area',
@@ -90,3 +90,23 @@ function zm_posted_in() {
     );
 }
 endif;
+
+
+function pelham_list_pages(){
+    global $wp_query;
+    $pagename = get_query_var('pagename');
+    $page_info = get_page_by_title( $pagename );
+    $pages = get_pages( array( 'child_of' => $page_info->ID, 'sort_column' => 'post_date', 'sort_order' => 'desc' ) );
+    ob_start(); ?>
+    <ul class="main">
+        <?php foreach( $pages as $page ) : ?>
+        <li <?php post_class('post')?>>
+            <h3><a href="<?php print get_permalink( $page->ID ); ?>" title="<?php get_the_title( $page->ID ); ?>"><?php print get_the_title( $page->ID ); ?></a></h3>
+            <?php print $page->post_content; ?>
+            <small><span class="posted-in"><?php zm_posted_in(); ?></span> <time><?php the_date(); ?></time></small>
+        </li>
+        <?php endforeach; ?>
+    </ul>
+    <?php return ob_get_clean();
+}
+add_shortcode('list_pages', 'pelham_list_pages');

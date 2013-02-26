@@ -267,6 +267,13 @@ li.post p { font: 16px/1.7em Georgia, "Times New Roman"; margin: 0 0 20px; }
 
 .hentry hr { border-top: 1px solid #e3e3e3; border-bottom: 1px solid #fff; border-left: 0; border-right: 0; margin: 0 0 20px; }
 
+.hentry ul.main {
+    padding: 0;
+    }
+
+.hentry ul.main li {
+    margin: 0;
+    }
 /*= Comments
 -------------------------------------------------------------- */
 #respond { margin: 20px 0; }
@@ -294,17 +301,18 @@ li.post small { float: left; margin-bottom: 15px; width: 100%; }
 li.post a img { float: left; margin: 0 10px 0 0; width: 150px; }
 
 code {
-padding: 0 3px 2px;
-font-family: Menlo,Monaco,"Courier New",monospace;
-font-size: 12px;
-color:
-#333;
--webkit-border-radius: 3px;
--moz-border-radius: 3px;
-border-radius: 3px;
-color: #D14;
-background-color: #F7F7F9;
-border: 1px solid #E1E1E8;}
+    padding: 0 3px 2px;
+    font-family: Menlo,Monaco,"Courier New",monospace;
+    font-size: 12px;
+    color:
+    #333;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    color: #D14;
+    background-color: #F7F7F9;
+    border: 1px solid #E1E1E8;
+    }
 
 .archive .page-title {
     text-align: center;
@@ -313,4 +321,6 @@ border: 1px solid #E1E1E8;}
     float: left;
     width: 100%;
     }
+
+
 
