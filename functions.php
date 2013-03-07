@@ -77,8 +77,6 @@ function zm_posted_in() {
 
     if ($tag_list) {
         $posted_in = __('%1$s', 'collection');
-    } elseif ( is_object_in_taxonomy( get_post_type(), 'category' ) ) {
-   //     $posted_in = __('<span class="posted-in"> Posted in %1$s </span> ', 'collection');
     } else {
         $posted_in = null;
     }
