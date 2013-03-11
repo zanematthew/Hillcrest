@@ -36,8 +36,7 @@ a:hover {
 
 body { background: #f2f2f2; }
 img { border: 1px solid #ccc; }
-li:first-child.post { border-top: 0 none; padding-top: 0;}
-li:last-child.post { border-bottom: 0; }
+
 form p { font: normal 12px/1 Helvetica, sans-serif, arial; padding: 0; }
 label { font-weight: bold; margin: 0 0 3px 0; width: 100%; }
 
@@ -235,18 +234,19 @@ div.formBuilderFailure h4 { font-weight: bold; font-size: 13px; text-shadow: 1px
 /** categories as list with count! */
 .sidebar-container li.widget_categories { float: left; }
 
-/*= Loop
+/*= Hentry
 -------------------------------------------------------------- */
 ul.main { list-style-type: none; }
 
-li.post { border-bottom: 1px solid #d8d8d8; border-top: 1px solid #FFF; float: left; padding-bottom: 20px; padding-top: 30px; width: 100%; }
-li.post h3 { font: 18px/1 Helvetica, sans-serif; margin: 0 0 20px; }
-li.post h1,
-li.post h3 { text-shadow: 1px 1px 0px #fff; }
-li.post p { font: 16px/1.7em Georgia, "Times New Roman"; margin: 0 0 20px; }
+.main li.hentry { border-bottom: 1px solid #d8d8d8; border-top: 1px solid #FFF; float: left; padding-bottom: 20px; padding-top: 30px; width: 100%; }
+.main li.hentry h3 { font: 18px/1 Helvetica, sans-serif; margin: 0 0 20px; }
+.main li.hentry h1,
+.main li.hentry h3 { text-shadow: 1px 1px 0px #fff; }
+.main li.hentry p { font: 16px/1.7em Georgia, "Times New Roman"; margin: 0 0 20px; }
 
-/*= Hentry
--------------------------------------------------------------- */
+.main li:first-child.hentry { border-top: 0 none; padding-top: 0;}
+.main li:last-child.hentry { border-bottom: 0; }
+
 .hentry img { max-width: 100%; height: auto; }
 .hentry ul,
 .hentry ol { margin: 0 0 20px; padding: 0 0 0 20px; }
@@ -274,6 +274,11 @@ li.post p { font: 16px/1.7em Georgia, "Times New Roman"; margin: 0 0 20px; }
 .hentry ul.main li {
     margin: 0;
     }
+
+.main li.hentry small { float: left; margin-bottom: 15px; width: 100%; }
+.main li.hentry a img { float: left; margin: 0 10px 0 0; width: 150px; }
+
+
 /*= Comments
 -------------------------------------------------------------- */
 #respond { margin: 20px 0; }
@@ -296,9 +301,6 @@ time { color: #930000; }
 .control-container { left: 5px; position: fixed; top: 40px; width: 85px; }
 .control-container .title { color: #333; font: bold 13px/1 sans-serif; text-shadow: 1px 1px 0 #fff; }
 .control-container ul li { color: #999; font: 300 12px/1 sans-serif; list-style-type: none; }
-
-li.post small { float: left; margin-bottom: 15px; width: 100%; }
-li.post a img { float: left; margin: 0 10px 0 0; width: 150px; }
 
 code {
     padding: 0 3px 2px;
