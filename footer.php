@@ -19,24 +19,7 @@
 
     <div class="container_12">
         <footer class="grid_12">
-            <div class="footer-wrapper">
-            <?php if ( is_active_sidebar( 'first-footer-widget-area' ) ) : ?>
-                <div class="widget-area">
-                    <ul class="xoxo">
-                        <?php dynamic_sidebar( 'first-footer-widget-area' ); ?>
-                    </ul>
-                </div>
-            <?php endif; ?>
-            </div>
-
             <div class="bottom">
-            <?php if ( is_active_sidebar( 'absolute-footer-widget-area' ) ) : ?>
-                <div class="widget-area">
-                    <ul class="xoxo">
-                        <?php dynamic_sidebar( 'absolute-footer-widget-area' ); ?>
-                    </ul>
-                </div>
-            <?php endif; ?>
                 <ul class="inline">
                     <li>Powered By <a href="http://wordpress.org/" target="_blank">WordPress</a> version <span class="version"><?php bloginfo('version'); ?></span> A Blog Tool and Publishing Platform</li>
                 </ul>
