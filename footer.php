@@ -50,6 +50,6 @@
  * Call wp_footer to allow plugins to add CSS and JS
  */
 wp_footer(); ?>
-
+<?php do_action('pelham_above_closing_body'); ?>
 </body>
 </html>
