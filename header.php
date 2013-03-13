@@ -43,21 +43,6 @@ wp_head(); ?>
 <div class="container_12">
     <div class="push_1 grid_10 alpha">
         <header>
-            <?php if ( is_active_sidebar( 'first-header-widget-area' ) ) : ?>
-                <div id="first" class="widget-area">
-                    <ul class="xoxo">
-                        <?php dynamic_sidebar( 'first-header-widget-area' ); ?>
-                    </ul>
-                </div>
-            <?php endif; ?>
-
-            <?php if ( is_active_sidebar( 'second-header-widget-area' ) ) : ?>
-                <div id="second" class="widget-area">
-                    <ul class="xoxo">
-                        <?php dynamic_sidebar( 'second-header-widget-area' ); ?>
-                    </ul>
-                </div>
-            <?php endif; ?>
             <?php wp_nav_menu( array( 'container_class' => 'menu-container', 'theme_location' => 'primary' ) ); ?>
             <?php if ( is_single() || is_page() ) : ?>
                 <h2 class="slogan"><a href="<?php bloginfo('url'); ?>"><span class="name"><?php bloginfo('name'); ?></span></a> <span class="description"><?php bloginfo('description'); ?></span></h2>
