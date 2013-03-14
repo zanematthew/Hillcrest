@@ -41,6 +41,8 @@ form p { font: normal 12px/1 Helvetica, sans-serif, arial; padding: 0; }
 label { font-weight: bold; margin: 0 0 3px 0; width: 100%; }
 
 /** forms */
+input[type="url"],
+input[type="email"],
 input[type="text"],
 textarea {
     border: 1px solid #bbb;
@@ -103,9 +105,16 @@ article h1 {
     margin: -6px 0 20px;
     }
 
-article h2 { font: bold 18px/1.2em sans-serif; margin: 0 0 10px; }
-article h1,
-article h2 { text-shadow: 1px 1px 0px #fff; }
+article h2,
+article h3,
+article h4,
+article h5,
+article h6 {
+    font: bold 18px/1.2em sans-serif;
+    margin: 0 0 10px;
+    text-shadow: 1px 1px 0px #fff;
+    }
+
 article p { font: 16px/1.6em Georgia, "Times New Roman"; margin: 0 0 20px; }
 
 /** oh yeah, remove besky empty p that wysiwyng spits out! */
@@ -323,6 +332,3 @@ code {
     float: left;
     width: 100%;
     }
-
-
-
