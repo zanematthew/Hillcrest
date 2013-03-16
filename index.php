@@ -31,7 +31,7 @@
                         <h1 class="entry-title"><?php the_title(); ?></h1>
                         <div class="entry-content">
                             <?php the_content(); ?>
-                            <?php if ( get_option('zm_ajax_comments_version') ) zm_ajax_comments(); ?>
+                            <?php comments_template(); ?>
                         </div>
                     </div>
                 <?php endwhile; // end of the loop. ?>
@@ -49,7 +49,7 @@
                     <?php do_action( 'pelham_below_the_title', $post->ID ); ?>
                     <?php the_content(); ?>
                     <?php do_action('pelham_below_the_content', $post->ID ); ?>
-                    <?php if ( get_option('zm_ajax_comments_version') ) zm_ajax_comments(); ?>
+                    <?php comments_template(); ?>
                 </div>
                 <?php endwhile; // end of the loop. ?>
             </article>

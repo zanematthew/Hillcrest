@@ -332,3 +332,46 @@ code {
     float: left;
     width: 100%;
     }
+
+
+/*= Plugin Readme to Post styling
+-------------------------------------------------------------- */
+.prtp-container .ui-tabs .ui-tabs-panel {
+    padding: 10px 0 0;
+    }
+
+.prtp-container .ui-tabs .ui-tabs-nav {
+    padding: 0;
+    font-family: sans-serif;
+    font-size: 13px;
+    float: left;
+    background: white;
+    box-shadow: 1px 1px 1px #DDD inset;
+    border-radius: 3px;
+    width: 100%;
+    margin: 0 0 10px 0;
+    }
+
+.prtp-container .ui-tabs .ui-tabs-nav li.ui-tabs-active a {
+    background: #F2F2F2;
+    border-radius: 3px 3px 0 0;
+    box-shadow: 1px -1px 1px #DDD;
+    }
+
+.prtp-container .ui-tabs .ui-tabs-nav li a {
+    margin: 10px 10px 0;
+    padding: 10px 13px 10px;
+    font-weight: bold;
+    }
+
+.prtp-container h1 {
+    font: bold 16px/1 sans-serif;
+    margin: 0;
+    }
+
+.prtp-container h2 {}
+.prtp-container h3 {}
+.prtp-container h4 {}
+.prtp-container h5 {}
+.prtp-container h6 {}
+.prtp-container p {}
