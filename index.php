@@ -63,9 +63,7 @@
                 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
                     <li <?php post_class()?>>
                         <h3><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
-                        <?php do_action( 'pelham_below_the_title', $post->ID ); ?>
                         <?php the_excerpt(); ?>
-                        <?php do_action( 'pelham_below_the_excerpt', $post->ID ); ?>
                         <small><span class="posted-in"><?php zm_posted_in(); ?></span> <time><?php the_date(); ?></time></small>
                     </li>
                 <?php endwhile; ?>
