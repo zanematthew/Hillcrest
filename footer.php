@@ -16,17 +16,51 @@
             <?php endforeach; ?>
        </ul>
     </aside>
+</div>
 
-    <div class="container_12">
-        <footer class="grid_12">
-            <div class="bottom">
-                <ul class="inline">
-                    <li>Powered By <a href="http://wordpress.org/" target="_blank">WordPress</a> version <span class="version"><?php bloginfo('version'); ?></span> A Blog Tool and Publishing Platform</li>
-                </ul>
+    <div class="bottom-container">
+        <div class="container_12">
+            <div class="grid_12">
+                <div class="padding">
+                    <div class="grid_7 push_1">
+                        <?php if ( is_active_sidebar( 'first-footer-widget-area' ) ) : ?>
+                            <div id="first" class="widget-area">
+                                <ul class="xoxo">
+                                    <?php dynamic_sidebar( 'first-footer-widget-area' ); ?>
+                                </ul>
+                            </div>
+                        <?php endif; ?>
+                        <div class="widget-container" id="connect">
+                            <h4 class="widget-title">Connect</h4>
+                            <ul>
+                                <li><a href="http://github.com/zanematthew" target="_blank"><span class="genericon genericon-github"></span>Fork me on GitHub</a></li>
+                                <li><a href="http://twitter.com/zanematthew" target="_blank"><span class="genericon genericon-twitter"></span>Follow me on Twitter</a></li>
+                                <li><a href="<?php print site_url(); ?>/contact"><span class="genericon genericon-mail"></span>Contact me directly</a></li>
+                            </ul>
+                        </div>
+                        <div class="widget-container" id="latest">
+                            <?php zm_plugin_post_type_latest(); ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="container_12">
+                <div class="grid_5 push_3">
+                    <div class="padding">
+                        <?php if ( is_active_sidebar( 'absolute-footer-widget-area' ) ) : ?>
+                            <div id="first" class="widget-area">
+                                <ul class="xoxo">
+                                    <?php dynamic_sidebar( 'absolute-footer-widget-area' ); ?>
+                                </ul>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                </div>
             </div>
         </footer>
     </div>
-</div>
 
 <?php
 /**

@@ -1,5 +1,16 @@
 <?php
 
+function pelham_scripts() {
+    wp_enqueue_style( 'pelham-styles', get_template_directory_uri() . '/genericons/genericons.css' );
+}
+
+
+function pelham_setup(){
+    add_action( 'wp_enqueue_scripts', 'pelham_scripts' );
+}
+add_action( 'after_setup_theme', 'pelham_setup' );
+
+
 register_nav_menus( array(
     'primary' => __( 'Primary Navigation', 'hbs' ),
     'sidebar' => __( 'Sidebar Navigation', 'hbs' )
@@ -34,8 +45,8 @@ function zm_widgets_init() {
 		'description' => __( 'The footer widget area', 'zm' ),
 		'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
 		'after_widget' => '</li>',
-		'before_title' => '<h3 class="widget-title">',
-		'after_title' => '</h3>',
+		'before_title' => '<h4 class="widget-title">',
+		'after_title' => '</h4>',
 	) );
 
     register_sidebar( array(
@@ -75,17 +86,16 @@ function zm_posted_in() {
     // Retrieves tag list of current post, separated by commas.
     $tag_list = get_the_tag_list( '', ', ' );
 
-    if ($tag_list) {
-        $posted_in = __('%1$s', 'collection');
+    if ( $tag_list) {
+        return sprintf(
+            __('%1$s', 'collection'),
+            $tag_list
+        );
     } else {
-        $posted_in = null;
+        return false;
     }
 
-    // Prints the string, replacing the placeholders.
-    printf(
-        $posted_in,
-        $tag_list
-    );
+
 }
 endif;
 

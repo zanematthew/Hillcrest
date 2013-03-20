@@ -64,7 +64,12 @@
                     <li <?php post_class()?>>
                         <h3><a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a></h3>
                         <?php the_excerpt(); ?>
-                        <small><span class="posted-in"><?php zm_posted_in(); ?></span> <time><?php the_date(); ?></time></small>
+                        <small>
+                            <?php if ( zm_posted_in() ) : ?>
+                                <span class="genericon genericon-tag"></span><span class="posted-in"><?php print zm_posted_in(); ?></span>
+                            <?php endif; ?>
+                            <span class="genericon genericon-month"></span><time><?php print get_the_date(); ?></time>
+                        </small>
                     </li>
                 <?php endwhile; ?>
             </ul>
