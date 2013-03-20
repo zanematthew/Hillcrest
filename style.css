@@ -38,7 +38,6 @@ a:hover {
     }
 
 body { background: #f2f2f2; }
-img { border: 1px solid #ccc; }
 
 form p { font: normal 12px/1 Helvetica, sans-serif, arial; padding: 0; }
 label { font-weight: bold; margin: 0 0 3px 0; width: 100%; }
@@ -237,6 +236,8 @@ div.formBuilderFailure h4 { font-weight: bold; font-size: 13px; text-shadow: 1px
 
 /*= Hentry
 -------------------------------------------------------------- */
+.hentry img { border: 1px solid #ccc; }
+
 ul.main { list-style-type: none; }
 
 .main li.hentry { border-bottom: 1px solid #d8d8d8; border-top: 1px solid #FFF; float: left; padding-bottom: 20px; padding-top: 30px; width: 100%; }
@@ -368,7 +369,7 @@ small .genericon {
     color: #999;
     }
 
-.bottom-container .widget-container a {
+.bottom-container a {
     -webkit-transition: color .5s;
     -moz-transition: color .5s;
     -o-transition: color .5s;
@@ -381,12 +382,12 @@ small .genericon {
     transition-timing-function: linear;
     }
 
-.bottom-container .widget-container a:hover {
+.bottom-container a:hover {
     color: #fff;
     }
 
 .bottom-container .widget-container ul {
-    padding: 0 0 0 17px;
+    list-style-type: none;
     }
 
 .bottom-container .widget-container ul li {
@@ -429,11 +430,74 @@ small .genericon {
     color: #414141;
     }
 
-.bottom-container footer .textwidget {
+.bottom-container footer .textwidget,
+.bottom-container footer .textwidget a {
     color: #414141;
     text-shadow: 1px 1px 0 black;
     font-family: helvetica;
     text-align: center;
     line-height: 1.6em;
     font-size: 15px;
+    }
+
+.bottom-container .copyright {
+    font-family: helvetica;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 11px;
+    }
+
+.bottom-container ul.menu {
+    list-style-type: none;
+    text-align: center;
+    }
+
+.bottom-container ul.menu .menu-item {
+    display: inline;
+    margin: 0 5px 0 5px;
+    }
+
+.bottom-container ul.menu .menu-item a {
+    color: black;
+    font-family: helvetica;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 300;
+    -webkit-transition: color .5s;
+    -moz-transition: color .5s;
+    -o-transition: color .5s;
+    -ms-transition: color .5s;
+    transition: color .5s;
+    -webkit-transition-timing-function: linear;
+    -moz-transition-timing-function: linear;
+    -o-transition-timing-function: linear;
+    -ms-transition-timing-function: linear;
+    transition-timing-function: linear;
+    }
+
+.bottom-container ul.menu .menu-item a:hover {
+    color: #fff;
+    }
+
+.bottom-container ul.menu .current_page_item a {
+    font-weight: bold;
+    }
+
+.bottom-container .bottom-right {
+    float: left;
+    }
+
+.bottom-container .bottom-right .widget-container {
+    margin: 0;
+    text-align: center;
+    }
+
+.bottom-container .bottom-right .widget-container img {
+    max-width: 76%;
+    }
+
+.bottom-container .bottom-left {
+    float: left;
+    width: 455px;
     }

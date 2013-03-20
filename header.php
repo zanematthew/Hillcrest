@@ -1,19 +1,27 @@
-<!DOCTYPE html>
-<html <?php language_attributes(); ?>>
-<meta charset="<?php bloginfo( 'charset' ); ?>" />
-
 <?php
 /**
- * Pull in our first post and check if it has a custom field for 'meta_description'
+ * The Header for our theme.
+ *
+ * Displays all of the <head> section and some more
+ *
+ * @package zM
+ * @subpackage Pelham
+ * @since Pelham 0.1
  */
-global $post;
-(isset( $post->ID )) ? $post_meta = get_post_custom( $post->ID ) : '';
-$meta_description = isset( $post_meta['meta_description'][0] ) ? $post_meta['meta_description'][0] : get_bloginfo('meta_description' );
-$keywords = isset( $post_meta['keywords'][0]) ? $post_meta['keywords'][0] : '';
-?>
+?><!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" <?php language_attributes(); ?>>
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" <?php language_attributes(); ?>>
+<![endif]-->
+<!--[if !(IE 7) | !(IE 8)  ]><!-->
+<html <?php language_attributes(); ?>>
+<!--<![endif]-->
+<head>
 
-<meta name="description" content="<?php print $meta_description; ?>" />
-<meta name="keywords" content="<?php print $keywords; ?>" />
+<meta charset="<?php bloginfo( 'charset' ); ?>" />
+<meta name="viewport" content="width=device-width" />
 <meta name="expires"   content="never" />
 <meta name="language"  content="english" />
 <meta name="distribution"  content="Global" />
@@ -21,22 +29,17 @@ $keywords = isset( $post_meta['keywords'][0]) ? $post_meta['keywords'][0] : '';
 <meta name="publisher" content="<?php bloginfo( 'name' ); ?>" />
 <meta content="<?php echo the_date( 'Y' ); ?> <?php bloginfo( 'name' ); ?>" name="copyright"/>
 
-<?php
-/**
- * Favicon is pulled in from the ROOT of the template
- */
-?>
+<title><?php wp_title( ':', true, 'right' ); ?> <?php bloginfo( 'name' ); ?></title>
+<link rel="profile" href="http://gmpg.org/xfn/11" />
+<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+<?php // Loads HTML5 JavaScript file to add support for HTML5 elements in older IE versions. ?>
+<!--[if lt IE 9]>
+<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js" type="text/javascript"></script>
+<![endif]-->
 <link rel="Shortcut Icon" href="<?php bloginfo( 'template_directory' ); ?>/favicon.ico" />
 <link rel="icon" type="image/ico" href="<?php bloginfo( 'template_directory' ); ?>/favicon.ico" />
-<title><?php wp_title( ':', true, 'right' ); ?> <?php bloginfo( 'name' ); ?></title>
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
-
-<?php
-/**
- * Call wp_head to allow plugins to add CSS and JS
- */
-wp_head(); ?>
 <link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
+<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>

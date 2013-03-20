@@ -13,7 +13,8 @@ add_action( 'after_setup_theme', 'pelham_setup' );
 
 register_nav_menus( array(
     'primary' => __( 'Primary Navigation', 'hbs' ),
-    'sidebar' => __( 'Sidebar Navigation', 'hbs' )
+    'sidebar' => __( 'Sidebar Navigation', 'hbs' ),
+    'footer' => __( 'Footer Navigation', 'hbs' )
     ) );
 
 function zm_widgets_init() {
@@ -52,6 +53,16 @@ function zm_widgets_init() {
     register_sidebar( array(
         'name' => __( 'Absolute Footer Widget Area', 'zm' ),
         'id' => 'absolute-footer-widget-area',
+        'description' => __( 'The absolute footer widget area', 'zm' ),
+        'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
+        'after_widget' => '</li>',
+        'before_title' => '<h3 class="widget-title">',
+        'after_title' => '</h3>',
+    ) );
+
+    register_sidebar( array(
+        'name' => __( 'Absolute Footer Widget Right Area', 'zm' ),
+        'id' => 'absolute-footer-widget-right-area',
         'description' => __( 'The absolute footer widget area', 'zm' ),
         'before_widget' => '<li id="%1$s" class="widget-container %2$s">',
         'after_widget' => '</li>',
