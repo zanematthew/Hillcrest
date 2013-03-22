@@ -38,8 +38,8 @@
 <![endif]-->
 <link rel="Shortcut Icon" href="<?php bloginfo( 'template_directory' ); ?>/favicon.ico" />
 <link rel="icon" type="image/ico" href="<?php bloginfo( 'template_directory' ); ?>/favicon.ico" />
-<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 <?php wp_head(); ?>
+<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo( 'stylesheet_url' ); ?>" />
 </head>
 
 <body <?php body_class(); ?>>
